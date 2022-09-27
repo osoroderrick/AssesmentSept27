@@ -35,7 +35,7 @@ public class ShopApp {
           clothingPricesList.add(pieceOfClothing.getPrice());
           Collections.sort(clothingPricesList);
            for (int i = 0; i < clothingPricesList.size(); i++) {
-               System.out.println(clothingPricesList.get(i) + String.valueOf(pieceOfClothing));
+               System.out.println("$" + clothingPricesList.get(i) + " " +  String.valueOf(pieceOfClothing));
            }
 
         }
@@ -51,4 +51,6 @@ public class ShopApp {
 
         }
     }
+
+
 }

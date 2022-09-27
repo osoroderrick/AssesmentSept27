@@ -1,5 +1,6 @@
 package assesment;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
         Clothing clothing1 = new Clothing("Black T Shirt", 10.00, 'S');
         Clothing clothing2 = new Clothing("White T Shirt", 8.00, 'L');
         Clothing clothing3 = new Clothing("Green T Shirt", 14.00, 'M');
-
+        Clothing clothing4 = new Clothing("Jeans", 20.00,'M');
 
 
         Clothing [] mangerCart = {clothing1,clothing2,clothing3};
@@ -18,10 +19,11 @@ public class Main {
         HourlyEmployee hourlyEmployee = new HourlyEmployee("Jacob", employeeCart,'L',0.10);
 
         // print the total of your manager's cart
+        System.out.println("Manger Cart Total:");
         System.out.println(ShopApp.calcTotal(mangerCart));
 
         //Check if one of the clothing items fits
-        System.out.println("Does it Fit?:");
+        System.out.println("\n Does it Fit?:");
         System.out.println(ShopApp.isAFit(hourlyEmployee , clothing1));
         System.out.println(ShopApp.isAFit(hourlyEmployee, clothing2));
 
@@ -52,6 +54,22 @@ public class Main {
         System.out.println("\n Employee Names:");
         ShopApp.printEmployeeName(manager);
         ShopApp.printEmployeeName(hourlyEmployee);
+
+        //PrintDiscAMtOff
+        IDiscountable [] discountable = {manager,hourlyEmployee};
+        System.out.println("Discount Amount Off:");
+        ShopApp.printDiscAmtOff(discountable,clothing4);
+
+
+        //Sort and Print
+        System.out.println("Sort And Print by Price: ");
+        ShopApp.sortAndPrintClothingByPrice(clothingArrayList);
+
+
+
+
+
+
 
 
 
