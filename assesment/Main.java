@@ -6,10 +6,10 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        Clothing clothing1 = new Clothing("Black T Shirt", 10.00, 'S');
-        Clothing clothing2 = new Clothing("White T Shirt", 8.00, 'L');
-        Clothing clothing3 = new Clothing("Green T Shirt", 14.00, 'M');
-        Clothing clothing4 = new Clothing("Jeans", 20.00,'M');
+        Clothing clothing1 = new Clothing("Blue Jeans", 20.00, 'M');
+        Clothing clothing2 = new Clothing("White T Shirt", 5.00, 'S');
+        Clothing clothing3 = new Clothing("Button Up Shirt", 30.00, 'L');
+
 
 
         Clothing [] mangerCart = {clothing1,clothing2,clothing3};
@@ -25,17 +25,17 @@ public class Main {
         //Check if one of the clothing items fits
         System.out.println("\n Does it Fit?:");
         System.out.println(ShopApp.isAFit(hourlyEmployee , clothing1));
-        System.out.println(ShopApp.isAFit(hourlyEmployee, clothing2));
+
 
         //Print the hourlyEmployee's price after discounts
         System.out.println("\n Hourly Employee price after discount:");
         hourlyEmployee.printEmpPriceAfterDisc(clothing1);
-        hourlyEmployee.printEmpPriceAfterDisc(clothing3);
+        hourlyEmployee.printEmpPriceAfterDisc(clothing2);
 
         //Print the Managers price after discounts
         System.out.println("Manager price after discount:");
         manager.printEmpPriceAfterDisc(clothing1);
-        manager.printEmpPriceAfterDisc(clothing3);
+        manager.printEmpPriceAfterDisc(clothing2);
 
         //Create an ArrayList of clothing items, add some clothing items to the list and print each item with a for each loop
         ArrayList<Clothing> clothingArrayList = new ArrayList<>();
@@ -49,6 +49,11 @@ public class Main {
             System.out.println(peiceOfClothing);
         }
 
+        //Sort and Print
+        System.out.println("\n Sort And Print by Price: ");
+        ShopApp.sortAndPrintClothingByPrice(clothingArrayList);
+
+
 
         //Invoke the printEmployeeName method on each employee object
         System.out.println("\n Employee Names:");
@@ -57,13 +62,10 @@ public class Main {
 
         //PrintDiscAMtOff
         IDiscountable [] discountable = {manager,hourlyEmployee};
-        System.out.println("Discount Amount Off:");
-        ShopApp.printDiscAmtOff(discountable,clothing4);
+        System.out.println("\n Discount Amount Off:");
+        ShopApp.printDiscAmtOff(discountable,clothing1);
 
 
-        //Sort and Print
-        System.out.println("Sort And Print by Price: ");
-        ShopApp.sortAndPrintClothingByPrice(clothingArrayList);
 
 
 
